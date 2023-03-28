@@ -127,3 +127,15 @@ After implementing the custom Agent ID feature and ensuring the operational stab
 - Use a continuous integration and deployment (CI/CD) tool to automate the deployment process.
 - Deploy the changes during off-peak hours to minimize disruption to users.
 - Monitor the system after deployment to ensure that everything is working as expected.
+
+#### Assumptions
+Below are assumptions made while providing the estimates above:
+
+1. The new table to map Agent to Facility with custom IDs editable by the Facility has already been created.
+2. The script to backfill custom IDs for all Agents in the database has already been developed and tested.
+3. The custom IDs will be unique for each Agent within a Facility.
+4. The generateReport function will only need to be updated to use the custom IDs, and no other changes will be required.
+5. The format of the custom IDs will be consistent across all Facilities.
+6. The new feature for custom IDs will not have any impact on existing functionalities of the system.
+7. The time estimates are based on a single developer working on the tasks.
+8. Any external dependencies, such as API integrations or third-party libraries, are assumed to be functioning properly and without any issues. If any issues arise with external dependencies, additional time may be required to resolve them.
