@@ -29,6 +29,24 @@ You will be graded on the level of detail in each ticket, the clarity of the exe
 
 ###### Time/effort estimate: 6-8 hours
 
+#### Ticket 2: Replace the internal Agent id with the facility id in the Shifts database.
+
+###### Acceptance criteria:
+- The internal database id is replaced with the facility id of the Agent in the Shifts table in the database.
+- This modification is reflected in the backend application's Shifts data model, which has been modified.
+- The facility id of the Agent will now be returned by the new API endpoints for getting shifts by facility in place of the internal database id.
+- The modification is reflected in the API documentation.
+- To make sure that the new field is retrieved correctly, automated tests are made.
+
+###### Time/effort estimate: 3-4 hours
+
+###### Implementation details:
+1. To refer to the facility id of the Agent, add a new foreign key constraint to the Shifts table.
+2. The backend application's data model for Shifts should be updated to reflect the new foreign key constraint.
+3. Change the facility id of the Agent to the internal database id in the API endpoints for retrieving Shifts by Facility.
+4. The API documentation should be updated to reflect the change.
+5. To confirm that the new field is correctly obtained, create automated tests.
+
 #### Ticket 3: Replace the internal Agent id with the facility id in the report generation method.
 
 ###### Acceptance criteria:
