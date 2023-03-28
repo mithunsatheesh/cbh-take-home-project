@@ -29,6 +29,14 @@ You will be graded on the level of detail in each ticket, the clarity of the exe
 
 ###### Time/effort estimate: 6-8 hours
 
+###### Implementation details:
+- Using a migration script, include a new column called "facility id" in the Agent table.
+- In the backend application, update the Agent model to add the new column.
+- For setting and obtaining the facility id for Agents, add a new API endpoint.
+- The API documentation should be updated to reflect the new field.
+- To check that the facility id complies with any requirements listed by the Facilities, create validation logic.
+- To confirm that the new field is added and retrieved correctly, use automated tests.
+
 #### Ticket 2: Replace the internal Agent id with the facility id in the Shifts database.
 
 ###### Acceptance criteria:
