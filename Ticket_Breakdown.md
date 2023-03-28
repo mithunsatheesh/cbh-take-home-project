@@ -29,6 +29,22 @@ You will be graded on the level of detail in each ticket, the clarity of the exe
 
 ###### Time/effort estimate: 6-8 hours
 
+#### Ticket 3: Replace the internal Agent id with the facility id in the report generation method.
+
+###### Acceptance criteria:
+- The generateReport method has been changed to produce reports using the facility id of the Agent rather than the internal database id.
+- Instead of the internal database id, each Agent's facility id is listed in the PDF report.
+- The modification is reflected in the API documentation.
+- To make sure the new field is used correctly, automated tests are developed.
+
+###### Estimated effort/time: 2 to 3 hours
+
+###### Implementation details:
+- Replace the internal database id with the facility id of the Agent in the generateReport function.
+- Change the report template to include each Agent's facility id.
+- The API documentation should be updated to reflect the change.
+- To check that the new field is utilised effectively, create automated tests.
+
 #### Ticket 4: Ensure Operational Stability of Project
 
 Description: To ensure the stability of the project after implementing the custom Agent IDs, we need to perform a thorough testing and verification process to identify and fix any potential issues or bugs.
