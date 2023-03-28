@@ -20,17 +20,17 @@ You will be graded on the level of detail in each ticket, the clarity of the exe
 #### Ticket 1: Create a new table to store custom Agent IDs
 Description: Create a new table AgentFacilityMapping to store custom Agent IDs for each Facility they work with. The table should have columns for agent_id, facility_id, and custom_id.
 
-###### Acceptance criteria:
+##### Acceptance criteria:
 
 - The AgentFacilityMapping table is created with the required columns.
 - The table should be able to store one custom ID per agent per facility.
 - The custom IDs can be edited by Facilities at any time.
 - Each agent should have a unique ID per facility.
 
-###### Time/effort estimate: 
+##### Time/effort estimate: 
 1-2 days
 
-######  Implementation details:
+#####  Implementation details:
 
 - Create the AgentFacilityMapping table with the required columns.
 - Add any necessary constraints to ensure that each agent has a unique custom ID per facility.
@@ -39,16 +39,16 @@ Description: Create a new table AgentFacilityMapping to store custom Agent IDs f
 #### Ticket 2: Update Shifts table to reference AgentFacilityMapping table
 Description: Modify the Shifts table to reference the AgentFacilityMapping table instead of the Agents table. This will ensure that custom Agent IDs are used while generating reports.
 
-###### Acceptance criteria:
+##### Acceptance criteria:
 
 - The Shifts table is modified to reference the AgentFacilityMapping table instead of the Agents table.
 - The Shifts table should include the new custom_id column from the AgentFacilityMapping table.
 - The Shifts table should still be able to retrieve the necessary metadata about the assigned agent.
 
-###### Time/effort estimate: 
+##### Time/effort estimate: 
 1 day
 
-###### Implementation details:
+##### Implementation details:
 
 - Modify the Shifts table to reference the AgentFacilityMapping table.
 - Update the queries used to retrieve metadata about the assigned agent to include the custom_id column from the AgentFacilityMapping table.
@@ -57,28 +57,39 @@ Description: Modify the Shifts table to reference the AgentFacilityMapping table
 #### Ticket 3: Modify getShiftsByFacility function to use custom Agent IDs
 Description: Modify the getShiftsByFacility function to use custom Agent IDs instead of internal database IDs.
 
-###### Acceptance criteria:
+##### Acceptance criteria:
 
 - The getShiftsByFacility function is modified to use the custom Agent IDs stored in the AgentFacilityMapping table.
 - The function should still return all Shifts worked that quarter, including metadata about the assigned agent.
 - The function should be able to handle the case where an agent does not have a custom ID assigned by a facility.
 
-###### Time/effort estimate: 
+##### Time/effort estimate: 
 1-2 days
 
-###### Implementation details:
+##### Implementation details:
 
-Modify the getShiftsByFacility function to use the AgentFacilityMapping table to retrieve custom Agent IDs.
-Update any necessary queries to retrieve metadata about the assigned agent using the custom ID instead of the internal database ID.
+- Modify the getShiftsByFacility function to use the AgentFacilityMapping table to retrieve custom Agent IDs.
+- Update any necessary queries to retrieve metadata about the assigned agent using the custom ID instead of the internal database ID.
 
 #### Ticket 4: Modify generateReport function to use custom Agent IDs
-Description: Modify the generateReport function to use custom Agent IDs instead of internal database IDs.
+Description: Modify the generateReport function to use custom Agent IDs instead of internal database IDs. Currently, the generateReport function uses the internal database IDs for Agents when generating reports. However, with the new feature, Facilities will be able to save their own custom IDs for Agents, and these custom IDs should be used in the reports instead.
 
 ###### Acceptance criteria:
 
-The generateReport function is modified to use the custom Agent IDs stored in the AgentFacilityMapping table.
-The function should still be able to generate a PDF report containing information on the Shifts worked by each agent in a given quarter.
-The function should use the custom IDs to identify each agent in the report.
+- The generateReport function is modified to use the custom Agent IDs stored in the AgentFacilityMapping table.
+- The generateReport function now correctly uses the custom IDs instead of the internal database IDs when generating reports.
+- The custom IDs are correctly associated with the correct Agents in the report.
+- The updated generateReport function has been tested and confirmed to generate reports with custom IDs for all Agents.
+- The documentation or instructions for generating reports has been updated to reflect the change.
+
+##### Time/effort estimate: 
+1-2 days
+
+##### Implementation details:
+- Modify the generateReport function to fetch the custom IDs for Agents from the new mapping table created in the previous task.
+- Update the generateReport function to use the custom IDs instead of the internal database IDs when generating reports.
+- Ensure that the custom IDs are correctly associated with the correct Agents in the report.
+- Update any relevant documentation or instructions to reflect the change.
 
 #### Ticket 5: Backfill Custom IDs for Existing Data
 Description: Currently, the ID of each Agent on reports generated by the system is their internal database ID. However, we are introducing a new feature that allows Facilities to save their own custom IDs for each Agent they work with. This requires backfilling existing data with the new custom IDs.
