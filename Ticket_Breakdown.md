@@ -48,7 +48,7 @@ The Shifts table should still be able to retrieve the necessary metadata about t
 ###### Time/effort estimate: 
 This ticket can be completed in 3-4 hours, depending on the complexity of the database schema and the existing codebase.
 
-Implementation details:
+###### Implementation details:
 
 Modify the Shifts table to reference the AgentFacilityMapping table.
 Update the queries used to retrieve metadata about the assigned agent to include the custom_id column from the AgentFacilityMapping table.
