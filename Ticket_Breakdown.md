@@ -28,3 +28,35 @@ You will be graded on the level of detail in each ticket, the clarity of the exe
 - Create scripts to backfill the existing data with newly added attributes.
 
 ###### Time/effort estimate: 6-8 hours
+
+#### Ticket 4: Ensure Operational Stability of Project
+
+Description: To ensure the stability of the project after implementing the custom Agent IDs, we need to perform a thorough testing and verification process to identify and fix any potential issues or bugs.
+
+###### Acceptance Criteria:
+All existing features should continue to work as expected.
+Custom Agent IDs should be correctly associated with the corresponding Agents.
+Reports should be generated correctly using custom Agent IDs.
+
+###### Estimated Effort: 8 hours
+
+###### Implementation Details:
+Write unit tests to cover the new custom Agent ID functionality.
+Perform integration testing to ensure that the new functionality does not interfere with other parts of the system.
+Use a staging environment to perform additional testing and verification before deploying to production.
+Use logging and error reporting to monitor the system after deployment and quickly identify and fix any issues.
+
+#### Ticket 5: Deploy Latest Changes to Production
+After implementing the custom Agent ID feature and ensuring the operational stability of the project, we need to deploy the latest changes to production.
+
+###### Acceptance Criteria:
+Custom Agent ID functionality should be available to Facilities when generating reports.
+Reports should be generated correctly using custom Agent IDs.
+
+###### Estimated Effort: 2 hours
+
+###### Implementation Details:
+Ensure that all changes are committed and pushed to the main branch.
+Use a continuous integration and deployment (CI/CD) tool to automate the deployment process.
+Deploy the changes during off-peak hours to minimize disruption to users.
+Monitor the system after deployment to ensure that everything is working as expected.
