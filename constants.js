@@ -1,0 +1,6 @@
+module.exports = {
+  DEFAULT_PARTITION_KEY: "0",
+  MAX_PARTITION_KEY_LENGTH: 256,
+  HASH_ALGORITHM: "sha3-512",
+  HASH_OUTPUT_ENCODING: "hex",
+};
