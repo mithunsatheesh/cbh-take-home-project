@@ -16,3 +16,15 @@ Based on the information given, break this ticket down into 2-5 individual ticke
 You will be graded on the level of detail in each ticket, the clarity of the execution plan within and between tickets, and the intelligibility of your language. You don't need to be a native English speaker, but please proof-read your work.
 
 ## Your Breakdown Here
+
+#### Ticket 1: Add a new field to the Agent table for custom Facility ids
+
+###### Acceptance criteria:
+- Add new column named "facility_id" is available the Agent table in the database.
+- The new column attribute is available in the schema for Agents in the backend application.
+- The facility_id can be updated and retrieved through the API endpoints.
+- API documentation is updated with latest changes.
+- The new field is properly validated to ensure constraints like uniqueness.
+- Create scripts to backfill the existing data with newly added attributes.
+
+###### Time/effort estimate: 6-8 hours
